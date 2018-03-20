@@ -1,3 +1,4 @@
+#include <string.h>
 int elevado(float x, int y){
     for(int z=0; z < y-1; z++){
         x = x*x;
@@ -8,16 +9,14 @@ int elevado(float x, int y){
     return x;
 }
 
-int convertDecimal(char c)
-{
+int convertDecimal(char c){
     if (c >= '0' && c <= '9')
         return (int)c - '0';
     else
         return (int)c - 'A' + 10;
 }
 
-char convertString(int num)
-{
+char convertString(int num){
     if (num >= 0 && num <= 9)
         return (char)(num + '0');
     else

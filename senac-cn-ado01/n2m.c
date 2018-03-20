@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <string.h> 
+#include <stdlib.h>
 #include "lib.h"
+#include <string.h>
 
 int main(int argc, char *arg[]){
     int valor;
@@ -23,8 +24,6 @@ int main(int argc, char *arg[]){
             valor = para_base10(base_atual, arg[1]);
             printf("%s\n", de_base10(resp, base_nova, valor));
         }
-        
     }
-    
     return 0;
 }
