@@ -9,14 +9,14 @@ int elevado(float x, int y){
     return x;
 }
 
-int convertDecimal(char c){
+int char_para_int(char c){
     if (c >= '0' && c <= '9')
         return (int)c - '0';
     else
         return (int)c - 'A' + 10;
 }
 
-char convertString(int num){
+char int_para_char(int num){
     if (num >= 0 && num <= 9)
         return (char)(num + '0');
     else
@@ -31,7 +31,7 @@ int para_base10(int baseatual, char *arg){
     for(int x=0; x<len_numero; x++){
         y = y - 1;
         // printf("%c*%d^%d %d\n", arg[x], baseatual, y, elevado(baseatual, y));
-        valor += (convertDecimal(arg[x]) * elevado(baseatual, y));
+        valor += (char_para_int(arg[x]) * elevado(baseatual, y));
     }
     return valor;
 }
@@ -39,7 +39,7 @@ int para_base10(int baseatual, char *arg){
 char* de_base10(char resp[], int base_nova, int dec){
     int x;
     for(x = 0; dec > 0; x++){
-        resp[x] = convertString(dec % base_nova);
+        resp[x] = int_para_char(dec % base_nova);
         dec = dec/base_nova;
     }
     resp[x] = '\0';

@@ -1,0 +1,30 @@
+Main:
+-recebe os argumentos
+-verifica se tem a quantidade certa de argumentos
+-verifica se os valores dos argumentos estao no limite correto
+-se a nova base for 10 converte diretamente para 10
+-se a nova base diferente de 10 e a base atual for 10 converte diretamente da base 10
+-se a base nova e atual for diferente de 10, converte para base 10, em seguida para a base destino
+
+char_para_int:
+-receber um char verifica se o char esta entre '0' e '9', se estiver, pega o valor do char e subtrai '0'(48) que equivale ao primeiro char
+-se nao estiver entre '0' e '9', pega o valor do char, subtrai 'A'() + 10
+
+int_para_char:
+-processo diretamente inverso do char_para_int
+
+para_base10:
+-pega o tamanho da string recebida
+-define a potencia inicial, corresponte a casa do primeiro numero (ex de casa 125, 1 -> 2, 2 -> 1, 5 -> 0)
+-inicia valor = 0
+-itera em numero somando ao valor char_para_int(arg[x]) * base_atual ^ pontencia(corresponte a posicao do numero)
+-retorna o valor somando
+
+de_base10:
+-recebemos o int e a base nova
+-enquanto o numero for maior que 0 interamos e adiconamos 1 ao contador
+--iteracao:
+---inseremos na posicao correspondente ao iterador no vetor char corresponten ao resto entre do numero pela base
+---atualizamos o numero para numero dividido pela base
+-invertemos a string
+-retornamos a string
