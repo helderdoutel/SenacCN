@@ -1,3 +1,4 @@
+Helder Gomes Doutel
 Main:
 -recebe os argumentos
 -verifica se tem a quantidade certa de argumentos

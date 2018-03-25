@@ -1,0 +1,10 @@
+Helder Gomes Doutel
+
+O algoritmo consiste em calcular o seno e cosseno utilizando a serie de taylor
+para isso temos no caso do seno por exemplo, em funcao do seno(0)
+
+P(x) = 0 + 1(x)/1! + (-1)x^3/3! + ...+ fn(0)x^n/n!
+P(x) = Somatorio(0, n) ( (-1)^n * (x^(2n+1))/2n+1! )
+
+A main itera grau a grau até 4pi = 720 graus, converte para radianos e calcula o seno e cosseno,
+grava no arquivo todos resultados e no fim gera o grafico via popen(gnuplot)
