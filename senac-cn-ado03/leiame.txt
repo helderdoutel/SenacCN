@@ -1,0 +1,3 @@
+Helder
+
+calcula numero de euler de acordo com a formula usando diferentes tipos de variaveis para mostrar os erros

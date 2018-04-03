@@ -1,3 +1,3 @@
 void euler_float(long double iteracoes);
-void euler_double(double iteracoes);
-void euler_ldouble(double iteracoes);
+void euler_double(long double iteracoes);
+void euler_ldouble(long double iteracoes);
