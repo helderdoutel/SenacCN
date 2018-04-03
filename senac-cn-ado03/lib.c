@@ -14,7 +14,7 @@ void euler_float(long double iteracoes){
     while(x <= iteracoes){
         e = powf(1.0+(1.0/x),x);
         fprintf(f,"%Lf\t%f\n",x,e);
-        printf("%Lf\t%f\n",x,e);
+        // printf("%Lf\t%f\n",x,e);
         if(x >= controle){
             i = i*10;
             controle = controle*10;
@@ -27,10 +27,8 @@ void euler_float(long double iteracoes){
     fprintf(gnuplot,"set logscale xy\n");
     fprintf(gnuplot,"set output 'euler_flt.png'\n");
     fprintf(gnuplot,"plot 'saida.dat'\n");
-    
-    fflush(gnuplot);
+
     fprintf(gnuplot,"exit\n");
-    pclose(gnuplot);
     pclose(gnuplot);
     remove("saida.dat");
 }
@@ -45,7 +43,7 @@ void euler_double(long double iteracoes){
     while(x <= iteracoes){
         e = pow(1.0+(1.0/x),x);
         fprintf(f,"%Lf\t%f\n",x,e);
-        printf("%Lf\t%f\n",x,e);
+        // printf("%Lf\t%f\n",x,e);
         if(x >= controle){
             i = i*10;
             controle = controle*10;
@@ -59,9 +57,7 @@ void euler_double(long double iteracoes){
     fprintf(gnuplot,"set output 'euler_dbl.png'\n");
     fprintf(gnuplot,"plot 'saida.dat'\n");
     
-    fflush(gnuplot);
     fprintf(gnuplot,"exit\n");
-    pclose(gnuplot);
     pclose(gnuplot);
     remove("saida.dat");
 }
@@ -76,7 +72,7 @@ void euler_ldouble(long double iteracoes){
     while(x <= iteracoes){
         e = powl(1.0+(1.0/x),x);
         fprintf(f,"%Lf\t%f\n",x,e);
-        printf("%Lf\t%f\n",x,e);
+        // printf("%Lf\t%f\n",x,e);
         if(x >= controle){
             i = i*10;
             controle = controle*10;
@@ -90,9 +86,7 @@ void euler_ldouble(long double iteracoes){
     fprintf(gnuplot,"set output 'euler_ldbl.png'\n");
     fprintf(gnuplot,"plot 'saida.dat'\n");
     
-    fflush(gnuplot);
     fprintf(gnuplot,"exit\n");
-    pclose(gnuplot);
     pclose(gnuplot);
     remove("saida.dat");
 }
