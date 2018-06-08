@@ -15,6 +15,7 @@ implicit none
     allocate(entrada(dimensao,dimensao))
     allocate(matriz(dimensao, dimensao))
 
+    ! seta matriz S com todas entradas = 1/n
     do i=1, dimensao
         do j=1, dimensao
             matriz(i,j) = 1/n
@@ -25,6 +26,7 @@ implicit none
         mx(i,1) = (1/n) * m !mx e o valor fixo do vetor normal multiplicado por m utilizado nas iteracos
     end do  
     
+    ! instancia exemplo do ep matriz A
     entrada(1,1) = 0
 	entrada(1,2) = 0
 	entrada(1,3) = 1.0
@@ -49,7 +51,7 @@ implicit none
         end do
     end do    
 
-
+    ! calculo de vetor de pesos z = (1-m)Ay+ms
     do while (temp-vetor_normal(1,1) > precisao )
         temp = MAXVAL(vetor_normal)
 		vetor_normal = matmul(matriz,vetor_normal) !corresponde a Axk na formula 
