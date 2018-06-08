@@ -1,4 +1,7 @@
-subroutine rank(entrada, dimensao)
+subroutine teste_rank(retorno, entrada, dimensao)
+    ! =====================================================
+    ! teste
+    ! =====================================================
     integer :: i , j
     double precision, dimension(:,:), allocatable :: entrada
     double precision, dimension(:,:), allocatable :: vetor_normal, mx
@@ -45,5 +48,5 @@ subroutine rank(entrada, dimensao)
     do i=1,dimensao
        print *,vetor_normal(i,1)
     end do
-
+    return
 end subroutine

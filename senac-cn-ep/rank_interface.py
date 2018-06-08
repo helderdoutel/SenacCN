@@ -1,4 +1,4 @@
-import rank as r
+import rank
 
 file = open('grafo.csv', 'r')
 linhas = file.readlines()
@@ -44,5 +44,5 @@ for x in range(dimensao):
         if matriz_referencia[y][x] == 1:
             matriz_pesos[x][y] = float(1) / recebe[y + 1] * 1.0
 
-r.rank(entrada=matriz_pesos, dimensao=dimensao)
+rank.teste_rank(entrada=matriz_pesos, dimensao=dimensao)
 print matriz_pesos
