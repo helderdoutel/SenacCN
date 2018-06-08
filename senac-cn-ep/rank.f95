@@ -3,19 +3,21 @@ subroutine teste_rank(retorno, entrada, dimensao)
     ! teste
     ! =====================================================
     integer :: i , j
-    double precision, dimension(:,:), allocatable :: entrada
+    ! double precision, dimension(:,:), allocatable :: entrada
     double precision, dimension(:,:), allocatable :: vetor_normal, mx
     double precision, dimension(:,:), allocatable :: matriz
+    integer, intent(in) :: dimensao
+    double precision, intent(in) :: entrada(dimensao,dimensao)
+    double precision, intent(out)  :: retorno(dimensao,1)
     double precision :: m = 0.15
-    double precision :: precisao = 0.000001
+    double precision :: precisao = 0.00001
     double precision :: temp = 1
-    integer :: dimensao !matriz de teste
+    ! integer :: dimensao !matriz de teste
     double precision :: n
     allocate(vetor_normal(dimensao,1))
     allocate(mx(dimensao,1))
     ! allocate(entrada(dimensao,dimensao))
     allocate(matriz(dimensao, dimensao))
-
     n = dimensao/1.0
 
      ! seta matriz S com todas entradas = 1/n
@@ -46,7 +48,6 @@ subroutine teste_rank(retorno, entrada, dimensao)
     end do 
 
     do i=1,dimensao
-       print *,vetor_normal(i,1)
+       retorno(i,1) =vetor_normal(i,1)
     end do
-    return
 end subroutine
