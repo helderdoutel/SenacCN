@@ -2,7 +2,7 @@ subroutine teste_rank(retorno, entrada, dimensao)
     ! =====================================================
     ! teste
     ! =====================================================
-    integer :: i , j, parada
+    integer :: i , j
     ! double precision, dimension(:,:), allocatable :: entrada
     double precision, dimension(:,:), allocatable :: vetor_normal, mx
     double precision, dimension(:,:), allocatable :: matriz
@@ -18,8 +18,9 @@ subroutine teste_rank(retorno, entrada, dimensao)
     allocate(mx(dimensao,1))
     ! allocate(entrada(dimensao,dimensao))
     allocate(matriz(dimensao, dimensao))
+
     n = dimensao/1.0
-    parada = 1
+    
      ! seta matriz S com todas entradas = 1/n
     do i=1, dimensao
         do j=1, dimensao
@@ -40,15 +41,11 @@ subroutine teste_rank(retorno, entrada, dimensao)
 
     ! calculo de vetor de pesos xk+1 = (1-m)Axk+mx0
     do while (temp-vetor_normal(1,1) > precisao )
-        if(parada >= 100000000) THEN
-            exit
-        end if
-        temp = MAXVAL(vetor_normal)
+        temp = vetor_normal(1,1)
         vetor_normal = matmul(matriz,vetor_normal) !corresponde a Axk na formula 
         do i=1,dimensao
             vetor_normal(i,1) = ((1-m)*vetor_normal(i,1)) + mx(i,1)
         end do
-        parada = parada + 1
     end do 
 
     do i=1,dimensao
