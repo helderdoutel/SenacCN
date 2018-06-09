@@ -1,0 +1,11 @@
+-CSV
+Divisão da colunas: ";"
+Primeira Coluna: Nó de saida do grafo
+Segunda Coluna: Nó chegada
+
+-Interface Python
+Le csv
+Monta matriz inicial de pesos para serem calculados no fortran
+
+-Fortran
+Executa os calculo e retorna a lista com rank dos nos
